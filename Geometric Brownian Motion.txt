@@ -26,16 +26,6 @@ def geometricbrownian(listoftimes,S0,mu,sigma):
         geometricbrownianlist[l]=S0*math.exp((mu-sigma**2/2)*listoftimes[l]+sigma*brownianlist[l])    
     #return brownianlist, geometricbrownianlist
     plt.plot(listoftimes, geometricbrownianlist)
-    
-
-
-
-
-
-
-
-
-
 
 'Archives: '
 def pricegeometricbrownianmotionatT(T,S0,mu,sigma,n):
@@ -45,16 +35,6 @@ def pricegeometricbrownianmotionatT(T,S0,mu,sigma,n):
         sumprices = sumprices + geometricbrownian
     return sumprices/n
 
-
-
-
-
-
-
-
-
-
-
 def europeancalloption(S0,K,T,mu,sigma,n):
     count=0
     for k in range(0,n):
@@ -63,4 +43,5 @@ def europeancalloption(S0,K,T,mu,sigma,n):
             count = count + (ST-K)*math.exp(-mu*T)
     return count/n
     
+
     
