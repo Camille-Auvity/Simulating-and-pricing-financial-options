@@ -1,0 +1,127 @@
+import random
+import math
+import matplotlib.pyplot as plt
+
+'Box-Müller method'
+
+'Q1'
+def gaussian():
+    r=random.random()
+    u=random.random()
+    return math.sqrt(-2*math.log(r))*math.cos(2*math.pi*u)
+
+
+
+'Q2'
+def gaussianbis(m,s):
+    r=random.random()
+    u=random.random()
+    return m+math.sqrt(s)*math.sqrt(-2*math.log(r))*math.cos(2*math.pi*u)
+
+
+
+'Bonus'
+def drawgaussian(n,m,s): 
+    'm permet de régler la longueur des abscisses (qui vaut 2*m) '
+    listex=[]
+    listey=[]
+    for k in range(-m,m+1):
+        listex = listex + [k]
+    for l in range(-m,m+1):
+        listey = listey + [0]
+    for p in range(0,n):
+        a=gaussianbis(0,s)
+        if a>=-m and a<=m:
+            listey[int(a)+m]=listey[int(a)+m]+1
+    plt.bar(listex,listey)
+
+
+
+'Q3'
+def brownian(listoftimes):
+    n=len(listoftimes)
+    brownianlist=[]
+    for j in range(0,n):
+        brownianlist.insert(j,0)
+    for i in range(1,n):
+        brownianlist[i]=brownianlist[i-1]+gaussianbis(0,listoftimes[i]-listoftimes[i-1])
+    plt.plot(listoftimes, brownianlist)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'Q3'
+def brownian(listoftimes):
+    n=len(listoftimes)
+    brownianlist=[]
+    for j in range(0,n):
+        brownianlist.insert(j,0)
+    for i in range(1,n):
+        brownianlist[i]=brownianlist[i-1]+gaussianbis(0,listoftimes[i]-listoftimes[i-1])
+    plt.plot(listoftimes, brownianlist)
+    
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
