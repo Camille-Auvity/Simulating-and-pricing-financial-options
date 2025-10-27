@@ -4,23 +4,16 @@ import matplotlib.pyplot as plt
 
 'Box-Müller method'
 
-'Q1'
 def gaussian():
     r=random.random()
     u=random.random()
     return math.sqrt(-2*math.log(r))*math.cos(2*math.pi*u)
 
-
-
-'Q2'
 def gaussianbis(m,s):
     r=random.random()
     u=random.random()
     return m+math.sqrt(s)*math.sqrt(-2*math.log(r))*math.cos(2*math.pi*u)
 
-
-
-'Bonus'
 def drawgaussian(n,m,s): 
     'm permet de régler la longueur des abscisses (qui vaut 2*m) '
     listex=[]
@@ -35,9 +28,6 @@ def drawgaussian(n,m,s):
             listey[int(a)+m]=listey[int(a)+m]+1
     plt.bar(listex,listey)
 
-
-
-'Q3'
 def brownian(listoftimes):
     n=len(listoftimes)
     brownianlist=[]
@@ -111,6 +101,7 @@ def brownian(listoftimes):
 
 
         
+
 
 
 
